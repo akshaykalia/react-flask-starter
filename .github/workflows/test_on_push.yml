@@ -13,5 +13,3 @@ jobs:
           SHIPYARD_API_TOKEN: ${{ secrets.SHIPYARD_API_TOKEN }}
       - run: echo $SHIPYARD_ENVIRONMENT_URL
         shell: bash
-      - run: env | grep SHIPYARD
-        shell: bash
