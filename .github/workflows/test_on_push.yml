@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to test Github Action locally
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Test Action
+        uses: akshaykalia/test-action@master
+      - run: echo "$SHIPYARD_ENVIRONMENT_URL"
+        shell: bash
