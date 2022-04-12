@@ -9,7 +9,5 @@ jobs:
         uses: actions/checkout@v2
       - name: Test Action
         uses: akshaykalia/test-action@master
-        env:
-          SHIPYARD_API_TOKEN: ${{ secrets.SHIPYARD_API_TOKEN }}
       - run: echo $SHIPYARD_ENVIRONMENT_URL
         shell: bash
