@@ -1,0 +1,15 @@
+on: [pull_request, push]
+
+jobs:
+  hello_world_job:
+    runs-on: windows-latest
+    name: A job to test Github Action locally
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Test Action
+        uses: akshaykalia/test-action@master
+        env:
+          SHIPYARD_API_TOKEN: ${{ secrets.SHIPYARD_API_TOKEN }}
+      - run: echo $SHIPYARD_ENVIRONMENT_URL
+        shell: bash
