@@ -1,4 +1,4 @@
-on: [pull_request, push]
+on: [pull_request]
 
 jobs:
   hello_world_job:
@@ -8,7 +8,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Test Action
-        uses: akshaykalia/test-action@master
+        uses: akshaykalia/test-action/fetch-shipyard-env@master
         env:
           SHIPYARD_API_TOKEN: ${{ secrets.SHIPYARD_API_TOKEN }}
       - run: echo $SHIPYARD_ENVIRONMENT_URL
