@@ -11,6 +11,7 @@ jobs:
         uses: akshaykalia/test-action/fetch-shipyard-env@master
         with:
           api-token: ${{ secrets.SHIPYARD_API_TOKEN }}
-          timeout-minutes: 10
+          timeout-minutes: "10"
+          test: "sa"
       - run: echo $SHIPYARD_ENVIRONMENT_URL
         shell: bash
