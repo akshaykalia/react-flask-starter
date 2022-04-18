@@ -1,9 +1,9 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  print-env-data:
     runs-on: ubuntu-latest
-    name: A job to test Github Action locally
+    name: Fetch Shipyard Vars
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -12,7 +12,8 @@ jobs:
         with:
           api-token: ${{ secrets.SHIPYARD_API_TOKEN }}
           timeout-minutes: "10"
-      - run: |
+      - name: Print Env Data
+        run: |
           export CYPRESS_BASE_URL=${SHIPYARD_ENVIRONMENT_URL}
           export CYPRESS_BYPASS_TOKEN=${SHIPYARD_BYPASS_TOKEN}
           env | grep -e SHIPYARD -e CYPRESS
