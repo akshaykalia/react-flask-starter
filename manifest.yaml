@@ -60,27 +60,6 @@ spec:
             initialDelaySeconds: 5
             periodSeconds: 5
 ---
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: postgres
-  labels:
-    app: postgres
-spec:
-  selector:
-    matchLabels:
-      app: postgres
-  template:
-    metadata:
-      labels:
-        app: postgres
-    spec:
-      containers:
-      - image: postgres
-        name: postgres
-        ports:
-        - containerPort: 5432
----
 apiVersion: batch/v1
 kind: Job
 metadata:
