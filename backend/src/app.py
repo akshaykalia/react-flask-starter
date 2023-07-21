@@ -40,6 +40,9 @@ class Application:
         u.wait_for_service('postgres', 5432, timeout=30.0)
         self.migrate = Migrate(self.flask_app, self.db)
 
+        # Forcefully break app
+        1/0
+
     def init_routes(self):
 
         @self.flask_app.route('/')
